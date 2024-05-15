@@ -1,0 +1,16 @@
+<a class="episode__card" [routerLink]="['/episode', episode!.id]">
+    <h3 class="episode__card--name">{{ episode!.name }}</h3>
+    <div class="episode__card--characters">
+      <div class="episode__card--label">number of characters seen</div>
+      <div class="episode__card--value">{{ episode!.characters }}</div>
+    </div>
+    <div class="episode__card--episode">
+      <div class="episode__card--label">episode</div>
+      <div class="episode__card--value">{{ episode!.episode }}</div>
+    </div>
+    <div class="episode__card--air_date">
+      <div class="episode__card--label">Air date</div>
+      <div class="episode__card--value">{{ episode!.air_date }}</div>
+    </div> 
+  </a>
+  

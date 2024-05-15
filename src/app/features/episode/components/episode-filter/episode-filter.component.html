@@ -1,0 +1,24 @@
+
+<div class="episode__filter">
+    <h2 class="episode__filter--heading heading-2">Filter</h2>
+    <div class="episode__filter--chips">
+      @if(filterApplied.name) {
+      <app-chips (onClick)="removeName()" [text]="filterApplied.name"></app-chips>
+      }@if(filterApplied.episode) {
+      <app-chips (onClick)="removeEpisode()" [text]="filterApplied.episode"></app-chips>
+      }
+    </div>
+  
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="episode__filter--form">
+      <div class="episode__filter--name">
+        <label class="episode__filter--label">Name</label>
+        <input type="text" class="episode__filter--input" formControlName="name" placeholder="Name" id="name" />
+      </div>
+      <div class="episode__filter--episode">
+        <label class="episode__filter--label">Episode</label>
+        <input type="text" class="episode__filter--input" placeholder="Episode" id="episode" formControlName="episode" />
+      </div>
+      <button class="episode__filter--submit" type="submit">Apply</button>
+    </form>
+  </div>
+  

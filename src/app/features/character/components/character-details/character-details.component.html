@@ -1,0 +1,74 @@
+<section class="character">
+  @if(character) {
+  <div class="character__title">
+    <a class="character__back" (click)="goBack()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+      </svg>
+      <span>back</span>
+    </a>
+
+    <h1 class="character__name">{{ character!.name }}</h1>
+  </div>
+  <div class="character__layout">
+    <div class="character__picture">
+      <div class="character__label">Picture</div>
+      <img src="{{ character!.image }}" class="character__image" alt="{{ character!.name }}" />
+    </div>
+
+    <!-- <img src="{{ character!.image }}" class="character__image" alt="{{ character!.name }}" /> -->
+    <div class="character__status">
+      <app-character-status [status]="character!.status"></app-character-status>
+    </div>
+    <div class="character__gender">
+      <div class="character__label">Gender</div>
+      <div class="character__value">{{ character!.gender }}</div>
+    </div>
+    <div class="character__type">
+      <div class="character__label">Type</div>
+      @if(character!.type) {
+      <div class="character__value">{{ character!.type }}</div>
+      } @else {
+      <div class="character__value">-</div>
+      }
+    </div>
+    <div class="character__species">
+      <div class="character__label">Species</div>
+      <div class="character__value">{{ character!.species }}</div>
+    </div>
+    <div class="character__first-seen">
+      <div class="character__label">First seen in</div>
+      <a class="character__value" [routerLink]="['/location', firstEpisodeId]">{{ firstEpisodeName }}</a>
+    </div>
+    <div class="character__location">
+      <div class="character__label">Last known location</div>
+      <a class="character__value" [routerLink]="['/location', character!.location.id]">{{ character!.location.name }}</a>
+    </div>
+    <div class="character__origin">
+      <div class="character__label">Origin</div>
+      <a class="character__value" [routerLink]="['/location', character!.origin.id]">{{ character!.origin.name }}</a>
+    </div>
+    <div class="character__episodes">
+      <div class="character__label">List of episodes</div>
+
+      <div class="character__episodes--list">
+        @for(season of episodeBySeason.keys(); track season;) {
+        <div class="character__episodes--item">
+          <div class="character__episodes--season">Season {{ season }}</div>
+          @for(episode of episodeBySeason.get(season)!; track episode.id) {
+
+          <a class="character__episodes--row" [routerLink]="['/episode', episode.id]">
+            <div class="character__episodes--code">
+              {{ episode.code.episode }}
+            </div>
+            <div class="character__episodes--name">- {{ episode.name }}</div>
+          </a>
+          }
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  }
+</section>

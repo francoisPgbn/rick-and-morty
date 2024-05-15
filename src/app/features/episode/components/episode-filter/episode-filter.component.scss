@@ -1,0 +1,6 @@
+@import "variables";
+@import "mixin";
+
+.episode__filter {
+    @include filter-layout;
+}

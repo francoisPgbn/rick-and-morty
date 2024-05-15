@@ -1,0 +1,81 @@
+@import "variables";
+
+.dropdown {
+  position: relative;
+  font-size: 1.6rem;
+  font-family: $font-secondary;
+
+  &__main {
+    background-color: white;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+
+    border-radius: 0.5rem;
+    border: 1px solid $color-border;
+    padding: 0.5rem 1rem;
+
+    &--open {
+      outline: none;
+      border: 1px solid $color-green-lighter-2;
+      scale: 1.15;
+      margin-left: 1rem;
+      border-radius: 2rem;
+      background-color: $color-green-lighter-2;
+    }
+  }
+
+  &__selected-value {
+    flex: 1 0 70%;
+    text-align: left;
+  }
+
+  &__placeholder {
+    flex: 1 0 70%;
+    text-align: left;
+    color: $font-color-secondary;
+  }
+
+  &__panel {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+    top: 0;
+    left: 4%;
+    width: 100%;
+    opacity: 0;
+
+    background-color: $color-green-lighter-4;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 0 0.5rem 0.5rem;
+
+    &--open {
+      height: auto;
+      overflow: hidden;
+      top: 100%;
+      opacity: 1;
+    }
+  }
+  // &:has(.dropdown__main:focus) &__panel--open {
+  // }
+
+  &__item > button {
+    width: 100%;
+    text-align: left;
+    border: none;
+    padding: 0.3rem 0.5rem;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-green-lighter-1;
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

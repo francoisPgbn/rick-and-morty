@@ -1,0 +1,28 @@
+<div class="location__filter">
+  <h2 class="location__filter--heading heading-2">Filter</h2>
+  <div class="location__filter--chips">
+    @if(filterApplied.name) {
+    <app-chips (onClick)="removeName()" [text]="filterApplied.name"></app-chips>
+    }@if(filterApplied.dimension) {
+    <app-chips (onClick)="removeDimension()" [text]="filterApplied.dimension"></app-chips>
+    } @if(filterApplied.type) {
+    <app-chips (onClick)="removeType()" [text]="filterApplied.type"></app-chips>
+    }
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="location__filter--form">
+    <div class="location__filter--name">
+      <label class="location__filter--label">Name</label>
+      <input type="text" class="location__filter--input" formControlName="name" placeholder="Name" id="name" />
+    </div>
+    <div class="location__filter--dimension">
+      <label class="location__filter--label">Dimension</label>
+      <input type="text" class="location__filter--input" placeholder="Dimension" id="dimension" formControlName="dimension" />
+    </div>
+    <div class="location__filter--type">
+      <label class="location__filter--label">Type</label>
+      <input type="text" class="location__filter--input" placeholder="Type" id="type" formControlName="type" />
+    </div>
+    <button class="location__filter--submit" type="submit">Apply</button>
+  </form>
+</div>

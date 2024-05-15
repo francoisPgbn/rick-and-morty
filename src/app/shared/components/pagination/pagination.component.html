@@ -1,0 +1,83 @@
+<div class="pagination">
+  <button
+    *ngIf="displayToLeftArrow"
+    class="pagination__btn"
+    (click)="click(currentPage - 1)"
+  >
+    <svg
+      class="pagination__arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="#000000"
+      width="20"
+      height="20"
+    >
+      <path
+        d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+      ></path>
+    </svg>
+  </button>
+  <button
+    *ngIf="displayMinPageButton"
+    class="pagination__btn pagination__outer"
+    (click)="click(1)"
+  >
+    1
+  </button>
+  <button
+    disabled
+    *ngIf="displayMinusOneButton && displayMinPageButton"
+    class="pagination__btn pagination__dot"
+  >
+    ...
+  </button>
+  <button
+    *ngIf="displayMinusOneButton"
+    class="pagination__btn pagination__inner"
+    (click)="click(currentPage - 1)"
+  >
+    {{ currentPage - 1 }}
+  </button>
+  <button class="pagination__btn pagination__current" disabled>
+    {{ currentPage }}
+  </button>
+  <button
+    *ngIf="displayPlusOneButton"
+    class="pagination__btn pagination__inner"
+    (click)="click(currentPage + 1)"
+  >
+    {{ currentPage + 1 }}
+  </button>
+  <button
+    disabled
+    *ngIf="displayPlusOneButton && displayMaxPageButton"
+    class="pagination__btn pagination__dot"
+  >
+    ...
+  </button>
+  <button
+    *ngIf="displayMaxPageButton"
+    class="pagination__btn pagination__outer"
+    (click)="click(maxPage)"
+  >
+    {{ maxPage }}
+  </button>
+  <button
+    *ngIf="displayToRightArrow"
+    class="pagination__btn"
+    (click)="click(currentPage + 1)"
+  >
+    <svg
+      class="pagination__arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="#000000"
+      width="20"
+      height="20"
+    >
+      <path
+        d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"
+      ></path>
+    </svg>
+  </button>
+</div>

@@ -1,0 +1,112 @@
+@mixin list-layout {
+    display: grid;
+    grid-template-areas:
+      "heading heading"
+      "filter list"
+      "pagination pagination";
+    grid-auto-columns: 20% 1fr;
+    padding: 1rem 10rem;
+    // padding: $padding;
+    gap: 2rem;
+  
+    &__heading {
+      grid-area: heading;
+      text-align: center;
+      font-family: $font-primary;
+      color: $color-green-darker-4;
+    }
+  
+    &__filter {
+      grid-area: filter;
+    }
+  
+    &__list {
+      grid-area: list;
+    }
+  
+    &__pagination {
+      grid-area: pagination;
+      
+    }
+
+}
+
+@mixin filter-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &--chips {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-left: -1rem;
+  }
+  
+  &--form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    & > *:not(:last-child) {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  &--label {
+    font-size: 1.4rem;
+    color: $font-color-secondary;
+  }
+
+  &--label + * {
+    width: 70%;
+  }
+
+  &--select {
+    margin-left: -1rem;
+  }
+
+  &--input {
+    font-family: inherit;
+    border: 1px solid $color-border;
+    margin-left: -1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $color-green-lighter-2;
+      scale: 1.15;
+      margin-left: 0rem;
+      border-radius: 2rem;
+      background-color: $color-green-lighter-2;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $font-color-secondary;
+    }
+  }
+
+  &--submit {
+    width: min-content;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    border: 1px solid $color-border;
+    // box-shadow: 0rem 0rem 0.6rem red;
+    box-shadow: 2px 2px 3px 1px $color-shadow;
+    border-radius: 0.3rem;
+    color: white;
+    background-color: $color-green;
+    
+    &:active {
+      translate: 0 1px;
+    }
+    
+    &:hover {
+      background-color: $color-green-darker-1;
+    }
+  }}

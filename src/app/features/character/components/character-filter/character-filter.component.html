@@ -1,0 +1,40 @@
+<div class="character__filter">
+  <h2 class="character__filter--heading heading-2">Filter</h2>
+  <div class="character__filter--chips">
+    @if(filterApplied.name) {
+    <app-chips (onClick)="removeName()" [text]="filterApplied.name"></app-chips>
+    } @if(filterApplied.status) {
+    <app-chips (onClick)="removeStatus()" [text]="filterApplied.status"></app-chips>
+    } @if(filterApplied.species) {
+    <app-chips (onClick)="removeSpecies()" [text]="filterApplied.species"></app-chips>
+    } @if(filterApplied.type) {
+    <app-chips (onClick)="removeType()" [text]="filterApplied.type"></app-chips>
+    } @if(filterApplied.gender) {
+    <app-chips (onClick)="removeGender()" [text]="filterApplied.gender"></app-chips>
+    }
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="character__filter--form">
+    <div class="character__filter--name">
+      <label class="character__filter--label">Name</label>
+      <input type="text" class="character__filter--input" formControlName="name" placeholder="Name" id="name" />
+    </div>
+    <div class="character__filter--status">
+      <label class="character__filter--label">Status</label>
+      <app-dropdown id="status" formControlName="status" class="character__filter--select" placeholder="Status" [items]="statusDD"></app-dropdown>
+    </div>
+    <div class="character__filter--species">
+      <label class="character__filter--label">Species</label>
+      <input type="text" class="character__filter--input" placeholder="Species" id="species" formControlName="species" />
+    </div>
+    <div class="character__filter--type">
+      <label class="character__filter--label">Type</label>
+      <input type="text" class="character__filter--input" placeholder="Type" id="type" formControlName="type" />
+    </div>
+    <div class="character__filter--gender">
+      <label class="character__filter--label">Gender</label>
+      <app-dropdown id="gender" formControlName="gender" class="character__filter--select" placeholder="Gender" [items]="genderDD"></app-dropdown>
+    </div>
+    <button class="character__filter--submit btn" type="submit">Apply</button>
+  </form>
+</div>

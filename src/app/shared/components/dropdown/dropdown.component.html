@@ -1,0 +1,39 @@
+<div class="dropdown" #dropdown>
+  <button
+    [ngClass]="{ dropdown__main: true, 'dropdown__main--open': displayPanel }"
+    (click)="open()"
+    type="button"
+  >
+    @if(selectedValue) {
+    <span class="dropdown__selected-value">{{ selectedValue }}</span>
+    } @else {
+    <span class="dropdown__placeholder">{{ placeholder }}</span>
+    }
+    <span class="dropdown__arrow"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+        />
+      </svg>
+    </span>
+  </button>
+
+  <div
+    [ngClass]="{ dropdown__panel: true, 'dropdown__panel--open': displayPanel }"
+  >
+    <ul class="dropdown__list">
+      @for(item of items; track item.value;) {
+      <li class="dropdown__item">
+        <button (click)="selectValue(item.value)" type="button">
+          {{ item.label }}
+        </button>
+      </li>
+      }
+    </ul>
+  </div>
+</div>

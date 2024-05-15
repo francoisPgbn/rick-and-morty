@@ -1,0 +1,75 @@
+@import "variables";
+
+.character__card {
+  border: 1px solid $color-border;
+  display: grid;
+  grid-template-areas:
+    "img name name name"
+    "img status status status"
+    "img gender gender gender"
+    "img species species species"
+    "img  type type type";
+  padding: 2rem;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  transition: all 200ms;
+  overflow: hidden;
+
+  &--name,
+  &--type {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &--image {
+    grid-area: img;
+    max-width: 200px;
+    border-radius: 1rem;
+  }
+
+  &--name {
+    grid-area: name;
+    font-size: 2rem;
+  }
+
+  &--status {
+    grid-area: status;
+    text-transform: uppercase;
+  }
+
+  &--chip {
+    background-color: $color-chip-alive;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: min-content;
+    color: white;
+    font-size: 1.4rem;
+  }
+
+  &--species {
+    grid-area: species;
+  }
+
+  &--gender {
+    grid-area: gender;
+  }
+
+  &--type {
+    grid-area: type;
+    min-height: 3.6rem;
+  }
+
+  &--label {
+    color: $color-green-darker-4; 
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    box-shadow: 3px 3px 5px 1px $color-shadow;
+  }
+}

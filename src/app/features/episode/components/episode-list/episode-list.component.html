@@ -1,0 +1,9 @@
+<div class="episode__info">
+    <div class="episode__count">{{ count }} found</div>
+    <div class="episode__page">{{ currentPage }} of {{ maxPage }} pages</div>
+  </div>
+<div class="episode__list">
+  @for(episode of episodes; track episode.id) {
+  <app-episode-card [episode]="episode"></app-episode-card>
+  }
+</div>

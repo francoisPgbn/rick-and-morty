@@ -1,0 +1,29 @@
+@import "variables";
+
+.home {
+  &__item {
+    flex: 1;
+  }
+
+  &__btn {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 1.5rem 1rem;
+    background-image: linear-gradient(120deg, $color-green, $color-yellow);
+    background-size: 0rem 0.2rem;
+    background-repeat: no-repeat;
+    background-position: 0px 100%;
+    transition: all 300ms;
+    
+    &:hover {
+      color: $color-green-darker-4;
+      background-size: 100% 0.2rem;
+    }
+  }
+
+  &__arrow {
+    margin-left: 1.5rem;
+  }
+}

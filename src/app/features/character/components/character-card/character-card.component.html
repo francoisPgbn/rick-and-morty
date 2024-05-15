@@ -1,0 +1,23 @@
+<a class="character__card" [routerLink]="['/character', character!.id]">
+  <img src="{{ character!.image }}" class="character__card--image" alt="{{ character!.name }}" />
+  <h3 class="character__card--name">{{ character!.name }}</h3>
+  <div class="character__card--status">
+    <app-character-status [status]="character!.status"></app-character-status>
+  </div>
+  <div class="character__card--gender">
+    <div class="character__card--label">gender</div>
+    <div class="character__card--value">{{ character!.gender }}</div>
+  </div>
+  <div class="character__card--species">
+    <div class="character__card--label">species</div>
+    <div class="character__card--value">{{ character!.species }}</div>
+  </div>
+  <div class="character__card--type">
+    <div class="character__card--label">type</div>
+    @if(character!.type) {
+    <div class="character__card--value">{{ character!.type }}</div>
+    } @else {
+    <div class="character__card--value">-</div>
+    }
+  </div>
+</a>

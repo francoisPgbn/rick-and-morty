@@ -1,0 +1,41 @@
+<section class="episode">
+    @if(episode) {
+    <div class="episode__title">
+      <a class="episode__back" (click)="goBack()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+        </svg>
+        <span>back</span>
+      </a>
+  
+      <h1 class="episode__name">{{ episode!.name }}</h1>
+    </div>
+    <div class="episode__layout">
+      <div class="episode__air_date">
+        <div class="episode__label">air date</div>
+        <div class="episode__value">{{ episode!.air_date }}</div>
+      </div>
+      <div class="episode__episode">
+        <div class="episode__label">episode</div>
+        <div class="episode__value">{{ episode!.episode }}</div>
+      </div>
+      <div class="episode__residents">
+        <div class="episode__label">Characters</div>
+        <div class="episode__list">
+          @for(character of episode!.characters; track character.id ) {
+  
+          <a class="episode__item" [routerLink]="['/character',character.id]">
+            <div class="episode__character--picture">
+              <img src="{{ character!.image }}" class="episode__image" alt="{{ character.name }}" />
+            </div>
+            <div class="episode__character--name">{{ character.name }}</div>
+          </a>
+  
+          }
+        </div>
+      </div>
+    </div>
+  
+    }
+  </section>
+  

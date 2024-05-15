@@ -1,0 +1,17 @@
+<section class="home">
+  <div class="home__hero">
+    <p class="home__text">
+      Welcome to my <br />
+      <b class="home__title">Rick and morty</b><br />
+      project
+    </p>
+    <img class="home__img" src="./../../../../assets/hero.png"  alt="hero"/>
+  </div>
+  <div class="home__list">
+
+
+    <app-home-button [label]="'All characters'" [link]="['/characters', 1]" ></app-home-button>
+    <app-home-button [label]="'All episodes'" [link]="['/episodes', 1]" ></app-home-button>
+    <app-home-button [label]="'All locations'" [link]="['/locations', 1]" ></app-home-button>
+  </div>
+</section>

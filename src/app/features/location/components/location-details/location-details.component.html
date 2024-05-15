@@ -1,0 +1,44 @@
+<section class="location">
+  @if(location) {
+  <div class="location__title">
+    <a class="location__back" (click)="goBack()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+      </svg>
+      <span>back</span>
+    </a>
+
+    <h1 class="location__name">{{ location!.name }}</h1>
+  </div>
+  <div class="location__layout">
+    <div class="location__dimension">
+      <div class="location__label">Dimension</div>
+      <div class="location__value">{{ location!.dimension }}</div>
+    </div>
+    <div class="location__type">
+      <div class="location__label">Type</div>
+      @if(location!.type) {
+      <div class="location__value">{{ location!.type }}</div>
+      } @else {
+      <div class="location__value">-</div>
+      }
+    </div>
+    <div class="location__residents">
+      <div class="location__label">Residents</div>
+      <div class="location__list">
+        @for(resident of location!.resident; track resident.id ) {
+
+        <a class="location__item" [routerLink]="['/character',resident.id]">
+          <div class="location__resident--picture">
+            <img src="{{ resident!.image }}" class="location__image" alt="{{ resident.name }}" />
+          </div>
+          <div class="location__resident--name">{{ resident.name }}</div>
+        </a>
+
+        }
+      </div>
+    </div>
+  </div>
+
+  }
+</section>

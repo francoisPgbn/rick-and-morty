@@ -1,0 +1,49 @@
+@import "variables";
+
+.header {
+  height: 100%;
+  background-color: $color-white;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  padding: 1rem 8rem 1rem $padding-horizontal;
+  z-index: 10;
+  position: relative;
+  background-color: rgba($color-white, 0.05);
+
+  &__item:nth-child(1) {
+    margin-right: auto;
+  }
+
+  &__item {
+    // color: $color-white;
+    color: $color-black;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+
+    background-image: linear-gradient(
+      120deg,
+      transparent 50%,
+      $color-green 50%,
+      $color-yellow 100%
+    );
+    background-size: 250%;
+  }
+
+  &__logo {
+    height: 5rem;
+  }
+
+  &__item:not(:nth-of-type(1)):hover {
+    color: $color-black;
+    transition: all 300ms;
+    background-position: 100%;
+  }
+  &__active {
+    background-position: 100%;
+
+
+    &--logo {
+    }
+  }
+}

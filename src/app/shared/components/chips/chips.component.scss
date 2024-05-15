@@ -1,0 +1,27 @@
+@import "variables";
+
+.chip {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: rgba($color-purple, 0.3);
+  border: 1px solid $color-border;
+  color: $color-black;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: $font-secondary;
+  transition: all 300ms;
+
+  &:hover {
+    background-color: rgba($color-purple, 0.8);
+  }
+
+  svg {
+    height: 1.8rem;
+    width: 1.8rem;
+    vertical-align: middle;
+    fill: $color-black;
+  }
+}

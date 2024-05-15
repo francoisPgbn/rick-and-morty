@@ -1,0 +1,53 @@
+@import "variables";
+
+.footer {
+  width: 100%;
+  padding: 5rem $padding-horizontal;
+  background-color: $color-background;
+  color: $color-white;
+
+  display: grid;
+  grid-template-areas: "logo logo" "based-on created-by";
+  place-items: center;
+  row-gap: 5rem;
+
+  &__logo {
+    grid-area: logo;
+    height: 5rem;
+  }
+
+  &__based-on,
+  &__created-by {
+    height: 3rem;
+  }
+
+  &__based-on {
+    grid-area: based-on;
+  }
+
+  &__created-by {
+    grid-area: created-by;
+  }
+
+  &__name {
+    color: $color-white;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    font-size: 1.8rem;
+    background-image: linear-gradient(
+      120deg,
+      transparent 50%,
+      $color-green 50%,
+      $color-yellow 100%
+    );
+    background-size: 250%;
+    transition: all 300ms;
+
+    &:hover,
+    &:active {
+      color: $color-black;
+      background-position: 100%;
+      transform: translateX(1rem);
+    }
+  }
+}

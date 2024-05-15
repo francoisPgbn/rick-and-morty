@@ -1,0 +1,6 @@
+@import "variables";
+@import "mixin";
+
+.location__filter {
+    @include filter-layout;
+}

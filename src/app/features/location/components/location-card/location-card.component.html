@@ -1,0 +1,20 @@
+<a class="location__card" [routerLink]="['/location', location!.id]">
+    <h3 class="location__card--name">{{ location!.name }}</h3>
+    <div class="location__card--count">
+      <div class="location__card--label">number of residents seen</div>
+      <div class="location__card--value">{{ location!.count }}</div>
+    </div>
+    <div class="location__card--dimension">
+      <div class="location__card--label">dimension</div>
+      <div class="location__card--value">{{ location!.dimension }}</div>
+    </div>
+    <div class="location__card--type">
+      <div class="location__card--label">type</div>
+      @if(location!.type) {
+      <div class="location__card--value">{{ location!.type }}</div>
+      } @else {
+      <div class="location__card--value">-</div>
+      }
+    </div>
+  </a>
+  

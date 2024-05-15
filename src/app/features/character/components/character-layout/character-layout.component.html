@@ -1,0 +1,21 @@
+<section class="character">
+  <h1 class="character__heading heading-1">List of characters</h1>
+  <app-character-filter></app-character-filter>
+
+  @if(loading) {
+
+  <div>loading</div>
+
+  } @else {
+  <app-character-list [currentPage]="currentPage" [maxPage]="maxPage" class="character__list"></app-character-list>
+
+  @if(displayPagination) {
+  <div class="character__pagination">
+    <app-pagination
+      [currentPage]="currentPage"
+      [maxPage]="maxPage"
+      (onPageClick)="loadNewPage($event)"
+    ></app-pagination>
+  </div>
+  } }
+</section>

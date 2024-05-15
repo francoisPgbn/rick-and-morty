@@ -1,0 +1,9 @@
+<div class="location__info">
+    <div class="location__count">{{ count }} found</div>
+    <div class="location__page">{{ currentPage }} of {{ maxPage }} pages</div>
+  </div>
+<div class="location__list">
+  @for(location of locations; track location.id) {
+  <app-location-card [location]="location"></app-location-card>
+  }
+</div>

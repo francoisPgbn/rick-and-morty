@@ -1,0 +1,19 @@
+@import "variables";
+
+.character__card--chip {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: min-content;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.green {
+  background-color: $color-chip-alive;
+}
+.red {
+    background-color: $color-chip-dead;
+}
+.grey {
+    background-color: $color-chip-unknown;
+}
