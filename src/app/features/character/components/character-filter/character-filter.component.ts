@@ -25,14 +25,14 @@ export class CharacterFilterComponent
   });
 
   statusDD: DropdownItem[] = [
-    { label: '-', value: '-' },
+    { label: '-', value: '' },
     { label: 'Alive', value: 'Alive' },
     { label: 'Dead', value: 'Dead' },
     { label: 'Unknown', value: 'Unknown' },
   ];
 
   genderDD: DropdownItem[] = [
-    { label: '-', value: '-' },
+    { label: '-', value: '' },
     { label: 'Female', value: 'Female' },
     { label: 'Male', value: 'Male' },
     { label: 'Genderless', value: 'Genderless' },
@@ -60,7 +60,6 @@ export class CharacterFilterComponent
       status: this.form.value['status'],
       type: this.form.value['type'],
     } satisfies FilterApplied;
-    console.log(value);
 
     this.store.dispatch(new CharacterStateAction.ApplyFilter(value));
   }
