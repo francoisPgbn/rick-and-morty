@@ -1,4 +1,22 @@
+@import "variables";
+
 .layout {
-  display: grid;
-  grid-template-rows: 8rem auto auto;
+  display: flex;
+  flex-direction: column; 
+
+  main {
+    min-height: calc(100vh - 8rem);
+  }
+
+  &__loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    width: 100%;
+    height: 200%;
+    background-color: $color-green-darker-1 ;
+    padding: 4rem;
+    z-index: 2000;
+  }
 }

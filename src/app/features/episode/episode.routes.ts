@@ -6,10 +6,12 @@ export const routes: Routes = [
   {
     path: 'episodes/:page',
     component: EpisodeLayoutComponent,
+    data: { animation: 'EpisodeListPage' },
   },
   {
     path: 'episode/:id',
     component: EpisodeDetailsComponent,
+    data: { animation: 'EpisodeDetailsPage' },
   },
 ];
 

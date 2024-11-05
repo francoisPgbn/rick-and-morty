@@ -1,34 +1,32 @@
 @mixin list-layout {
-    display: grid;
-    grid-template-areas:
-      "heading heading"
-      "filter list"
-      "pagination pagination";
-    grid-auto-columns: 20% 1fr;
-    padding: 1rem 10rem;
-    // padding: $padding;
-    gap: 2rem;
-  
-    &__heading {
-      grid-area: heading;
-      text-align: center;
-      font-family: $font-primary;
-      color: $color-green-darker-4;
-    }
-  
-    &__filter {
-      grid-area: filter;
-    }
-  
-    &__list {
-      grid-area: list;
-    }
-  
-    &__pagination {
-      grid-area: pagination;
-      
-    }
+  display: grid;
+  grid-template-areas:
+    "heading heading"
+    "filter list"
+    "pagination pagination";
+  grid-auto-columns: 20% 1fr;
+  padding: 1rem 10rem 8rem 10rem;
+  // padding: $padding;
+  gap: 2rem;
 
+  &__heading {
+    grid-area: heading;
+    text-align: center;
+    font-family: $font-primary;
+    color: $color-green-darker-4;
+  }
+
+  &__filter {
+    grid-area: filter;
+  }
+
+  &__list {
+    grid-area: list;
+  }
+
+  &__pagination {
+    grid-area: pagination;
+  }
 }
 
 @mixin filter-layout {
@@ -43,7 +41,7 @@
     gap: 0.5rem;
     margin-left: -1rem;
   }
-  
+
   &--form {
     display: flex;
     flex-direction: column;
@@ -101,12 +99,13 @@
     border-radius: 0.3rem;
     color: white;
     background-color: $color-green;
-    
+
     &:active {
       translate: 0 1px;
     }
-    
+
     &:hover {
       background-color: $color-green-darker-1;
     }
-  }}
+  }
+}

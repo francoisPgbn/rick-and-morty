@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { CharacterItem } from '../../store/character.state';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-character-card',

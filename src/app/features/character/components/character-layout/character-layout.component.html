@@ -1,10 +1,16 @@
 <section class="character">
   <h1 class="character__heading heading-1">List of characters</h1>
   <app-character-filter></app-character-filter>
-
+  
   @if(loading) {
-
-  <div>loading</div>
+  <div class="skeletons">
+    <div class="loader">
+    </div>
+    <div class="loader">
+    </div>
+    <div class="loader">
+    </div>
+  </div>
 
   } @else {
   <app-character-list [currentPage]="currentPage" [maxPage]="maxPage" class="character__list"></app-character-list>

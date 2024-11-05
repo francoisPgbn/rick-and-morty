@@ -6,10 +6,12 @@ export const routes: Routes = [
   {
     path: 'locations/:page',
     component: LocationLayoutComponent,
+    data: { animation: 'LocationListPage' },
   },
   {
     path: 'location/:id',
     component: LocationDetailsComponent,
+    data: { animation: 'LocationDetailsPage' },
   }
 ];
 
