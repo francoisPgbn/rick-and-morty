@@ -8,7 +8,7 @@ import { CharacterRouting } from './features/character/character.routes';
 const routes: Routes = [];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableViewTransitions: true }), 
+  imports: [RouterModule.forRoot(routes, { enableViewTransitions: true, scrollPositionRestoration: 'top' }), 
     HomeRouting, 
     LocationRouting, 
     EpisodeRouting, 
