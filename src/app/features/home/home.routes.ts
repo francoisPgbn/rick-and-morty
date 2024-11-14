@@ -5,6 +5,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeLayoutComponent,
+    data: { animation: 'HomePage' },
   },
 ];
 
